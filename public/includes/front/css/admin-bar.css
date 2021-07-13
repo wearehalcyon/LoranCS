@@ -1,0 +1,114 @@
+#admin-bar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    background-color: #101824;
+    color: #a2acbb;
+    z-index: 9999;
+}
+
+#admin-bar ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#admin-bar ul li{
+    position: relative;
+    margin-right: 5px;
+}
+
+#admin-bar ul.left-nav li:first-child{
+    margin-left: 10px;
+}
+
+#admin-bar ul.right-nav li:first-child{
+    margin-right: 10px;
+}
+
+#admin-bar ul li.loran-icon-link a{
+    display: inline-block;
+    padding: 6px;
+    line-height: 0px;
+}
+
+#admin-bar ul li a img{
+    width: 20px;
+    height: 20px;
+    opacity: .7;
+}
+
+#admin-bar ul li:hover a img{
+    opacity: 1;
+}
+
+#admin-bar ul li a{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: #a2acbb;
+    text-decoration: none;
+    padding: 6px 6px 7px 6px;
+}
+
+#admin-bar ul li:hover a{
+    background-color: rgba(255,255,255,.1);
+    color: #76fff5;
+}
+
+#admin-bar ul li a i{
+    position: relative;
+    top: -1px;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+#admin-bar ul li a i.smallicon{
+    font-size: 14px;
+}
+
+#admin-bar ul li.user-link a img{
+    margin-right: 5px;
+}
+
+#admin-bar ul li ul.submenu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #101824;
+    min-width: 180px;
+    z-index: 10;
+}
+
+#admin-bar ul li ul.submenu li:first-child,
+#admin-bar ul li ul.submenu li:last-child{
+    margin: 0;
+}
+
+#admin-bar ul li.user-link ul.submenu{
+    left: auto;
+    right: 0;
+}
+
+#admin-bar ul li:hover ul.submenu{
+    display: block;
+}
+
+#admin-bar ul li ul.submenu li a{
+    background-color: transparent;
+    display: block;
+    color: #a2acbb;
+    padding: 10px;
+}
+
+#admin-bar ul li ul.submenu li:hover a{
+    color: #76fff5;
+}

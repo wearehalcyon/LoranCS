@@ -1,0 +1,310 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body{
+    background-color: #ededed;
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+a{
+    color: #00acff;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #099ce3;
+}
+
+.wrapp{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.form-card{
+    display: block;
+    position: relative;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,.05);
+    width: 230px;
+    max-width: 100%;
+    margin: 0 20px;
+    overflow: hidden;
+}
+
+body.engine-installation .form-card{
+    width: 500px;
+    min-height: 100px;
+}
+
+.formcontroll{
+    display: block;
+    margin-top: 10px;
+}
+
+.formcontroll input[type="text"],
+.formcontroll input[type="email"],
+.formcontroll input[type="password"]{
+    width: calc(100% - 22px);
+    border: 1px solid #ccc;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 400;
+    transition: all .2s;
+}
+
+.formcontroll input[type="text"]:focus,
+.formcontroll input[type="email"]:focus,
+.formcontroll input[type="password"]:focus{
+    border-color: #00acff;
+    box-shadow: 0px 0px 2px #00acff;
+}
+
+.formcontroll input[type="text"]::placeholder,
+.formcontroll input[type="email"]::placeholder,
+.formcontroll input[type="password"]::placeholder{
+    font-size: 13px;
+}
+
+.button{
+    border: none;
+    background-color: #00acff;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 4px 10px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button:hover{
+    background-color: #099ce3;
+    color: #fff;
+}
+
+.button-large{
+    padding: 8px 12px;
+}
+
+.forgot-link{
+    display: block;
+    margin-top: 10px;
+}
+
+.form-logo{
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
+.form-logo img{
+    width: auto;
+    max-width: 100%;
+    height: 40px;
+}
+
+body.engine-installation .form-logo img{
+    height: 60px;
+}
+
+body.engine-installation .form-card h1{
+    text-align: center;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+body.engine-installation .form-card p.desc{
+    text-align: center;
+    font-size: 16px;
+}
+
+body.engine-installation .form-card .license-agreement{
+    width: 100%;
+    height: 300px;
+    overflow-y: auto;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,.1);
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+body.engine-installation .form-card .license-agreement p{
+    margin: 10px 10px 20px 10px;
+}
+
+body.engine-installation .form-card .run-installation{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+body.engine-installation .form-card .copyright{
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 15px;
+}
+
+body.engine-installation .form-card .database-rules{
+    margin: 20px 0 30px 0;
+    text-align: center;
+}
+
+
+table.einstall{
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,.1);
+    padding: 0;
+}
+
+table.einstall tr td{
+    padding: 5px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+table.einstall tr:last-child td{
+    border-bottom: none;
+}
+
+table.einstall tr td.left-column{
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+
+table.einstall tr td.title{
+    padding: 5px 0;
+    background-color: rgba(0,0,0,.05);
+}
+
+table.einstall tr td.value{
+    width: 150px;
+    padding: 5px 0;
+    background-color: rgba(0,0,0,.05);
+}
+
+table.einstall tr td.value.finish{
+    width: 50%;
+    padding: 5px 0;
+    background-color: rgba(0,0,0,.05);
+}
+
+table.einstall tr td a:hover{
+    text-decoration: underline;
+}
+
+table.einstall tr td code{
+    display: inline-block;
+    border-left: 4px solid #3dd938;
+    background-color: rgba(0,0,0,.05);
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+table.einstall tr td span.php-outofdate{
+    color: #af1d1d;
+}
+
+table.einstall tr td span.php-relevant{
+    color: #38af1d;
+}
+
+table.einstall tr td strong{
+    font-weight: 600;
+}
+
+.acept-agreement-box{
+    display: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.acept-agreement-box span.acept-agreements{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 4px;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.acept-agreement-box span.acept-agreements:hover{
+    border: 1px solid #099ce3;
+}
+
+.acept-agreement-box span.acept-agreements:active{
+    border: 1px solid #099ce3;
+    background-color: #099ce3;
+}
+
+span.cant-continue-installation{
+    font-weight: 600;
+    color: #af1d1d;
+}
+
+table.einstall tr td input{
+    width: calc(100% - 22px);
+    border: 1px solid #ccc;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.finished-installation{
+    display: block;
+    margin: 10px 0 20px 0;
+    text-align: center;
+}
+
+.finished-installation a:hover{
+    text-decoration: underline;
+}
+
+.form-card .preloader{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    transition: all .3s;
+    z-index: 1;
+}
+
+.form-card .preloader.hide{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.form-card .preloader .preloader-animation{
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.form-card .preloader .preloader-animation p strong{
+    font-weight: 600;
+}
