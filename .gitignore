@@ -7,7 +7,6 @@
 /public/uploads/video/*
 /public/uploads/documents/*
 /storage/*.key
-/vendor
 .env
 .env.backup
 .phpunit.result.cache
