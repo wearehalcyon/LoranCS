@@ -2,10 +2,10 @@
 /public/hot
 /public/storage
 /public/uploads/TMP
-public/uploads/images/*
-public/uploads/audio/*
-public/uploads/video/*
-public/uploads/documents/*
+/public/uploads/images/*
+/public/uploads/audio/*
+/public/uploads/video/*
+/public/uploads/documents/*
 /storage/*.key
 .env
 .env.backup
