@@ -30,7 +30,7 @@ jQuery(document).ready(function(){
         plugins: 'code image imagetools link fullscreen media pagebreak preview searchreplace table visualblocks wordcount textcolor'
     });
     // Permalink generator
-    $('form.editor_form input.title').keyup(function(){
+    $('form.editor_form input.title').on('change', function(){
         var text = $(this).val();
         var target = $('input.permalink_input');
         if ( text.length && target.val().length == '' ) {
