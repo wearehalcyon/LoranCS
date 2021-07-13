@@ -436,6 +436,10 @@ ul.date_listing li.year{
     padding: 15px;
 }
 
+.form_control.add_media{
+    margin-top: 20px;
+}
+
 .add_media a i,
 .add_media button i{
     margin-right: 5px;
@@ -757,4 +761,47 @@ a.download_file_directly i{
     margin-bottom: 0px;
     padding: 5px 30px 5px 15px;
     font-size: 13px;
+}
+
+.form_control.content_editor{
+    margin-top: 10px;
+}
+
+.form_control.permalink{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+}
+
+.form_control.permalink input{
+    width: 200px;
+    margin-left: 10px;
+}
+
+.tox-statusbar__branding{
+    display: none;
+}
+
+.field_editor{
+    font-size: 32px;
+}
+
+.tox.tox-tinymce{
+    border-radius: 5px;
+}
+
+body.admin-area .tox .tox-dialog-wrap__backdrop{
+    background-color: rgba(0,0,0,.7);
+}
+
+body.admin-area .tox .tox-dialog{
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0px 10px 40px rgba(0,0,0,.3);
+}
+
+.tox .tox-button--naked.tox-button--icon:hover:not(:disabled){
+    border-radius: 100px;
+    overflow: hidden;
 }

@@ -11,18 +11,28 @@
             {!! Session::get('created') !!}
         </div>
     @endif
-    <form action="{{ route('my-admin-create-post-submit') }}" method="POST">
+    <form action="{{ route('my-admin-create-post-submit') }}" method="POST" class="editor_form">
         <div class="editor editor_cards">
             @csrf
             <div class="left_side">
                 <div class="form_control">
                     <input type="text" name="title" class="input is-medium title" placeholder="{{ __('Title') }}">
                 </div>
+                <div class="form_control permalink">
+                    <strong>
+                        {{ __('Permalink: ') }}
+                        <a href="{{ Core::getOption('siteurl') . '/' }}">{{ Core::getOption('siteurl') . '/' }}</a>
+                    </strong>
+                    <input type="text" name="slug" value="" class="input is-small permalink_input">
+                </div>
                 <div class="form_control add_media">
                     <a href="#" class="button is_small">
                         <i class="icofont-multimedia"></i>
                         {{ __('Add Media') }}
                     </a>
+                </div>
+                <div class="form_control content_editor">
+                    <textarea class="textarea has-fixed-size field_editor"></textarea>
                 </div>
             </div>
             <div class="right_side">

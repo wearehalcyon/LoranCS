@@ -91,7 +91,8 @@ class DashboardPostsController extends Controller
                 'key',
                 'zip',
                 'csv',
-                'rtf'
+                'rtf',
+                'txt'
             ],
             'audio' => [
                 'mp3',

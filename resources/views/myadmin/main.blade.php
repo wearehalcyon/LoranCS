@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="{{ asset('public/includes/admin/css/bulma.min.css') }}">
         <link rel="stylesheet" href="{{ asset('public/includes/admin/css/admin.css') }}">
     </head>
-    <body>
+    <body class="admin-area">
         <div class="wrapp">
             <aside class="sidebar">
                 @include('myadmin.partials.sidebar')
@@ -25,8 +25,10 @@
         </div>
         <?php require_once resource_path('views/core/front/admin-bar.blade.php'); ?>
         <script type="text/javascript" src="{{ asset('public/includes/js/core/jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('public/includes/admin/js/tinymce/tinymce.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('public/includes/front/js/app.js') }}"></script>
         <script type="text/javascript" src="{{ asset('public/includes/admin/js/admin.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('public/includes/admin/js/editor.js') }}"></script>
         @yield('footer-scripts')
     </body>
 </html>
