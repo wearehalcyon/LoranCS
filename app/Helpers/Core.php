@@ -18,7 +18,7 @@ class Core {
         return [
             'appname' => '<a href="https://loranengine.org/" target="_blank">LoranCS</a>',
             'ver' => '1.0.1',
-            'build' => '070621',
+            'build' => '071321',
             'release' => 'alpha',
             'codename' => 'Neptune',
         ];
