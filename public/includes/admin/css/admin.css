@@ -464,7 +464,7 @@ ul.date_listing li.year{
 }
 
 .media_lib_popup{
-    display: block;
+    display: none;
     position: fixed;
     width: calc(100% - 60px);
     height: calc(100% - 60px);
@@ -474,33 +474,36 @@ ul.date_listing li.year{
     background-color: #fff;
     box-shadow: 0px 10px 40px rgba(0,0,0,.2);
     overflow: hidden;
-    transition: all .3s;
-    transform: translateY(-100%);
-    visibility: hidden;
+    /*transition: all .3s;*/
+    /*transform: translateY(-100%);*/
+    /*visibility: hidden;*/
     z-index: 99999;
 }
 
 .media_lib_popup.open{
-    transform: translateY(0);
-    visibility: visible;
+    /*transform: translateY(0);*/
+    /*visibility: visible;*/
+    display: block;
 }
 
 .media_lib_popup_bg{
+    display: none;
     position: fixed;
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,.6);
     top: 0;
     left: 0;
-    transition: all .5s;
-    opacity: 0;
-    visibility: hidden;
+    /*transition: all .5s;*/
+    /*opacity: 0;*/
+    /*visibility: hidden;*/
     z-index: 99998;
 }
 
 .media_lib_popup_bg.open{
-    opacity: 1;
-    visibility: visible;
+    display: block;
+    /*opacity: 1;*/
+    /*visibility: visible;*/
 }
 
 .ml_header{
@@ -787,10 +790,6 @@ a.download_file_directly i{
     font-size: 32px;
 }
 
-.tox.tox-tinymce{
-    border-radius: 5px;
-}
-
 body.admin-area .tox .tox-dialog-wrap__backdrop{
     background-color: rgba(0,0,0,.7);
 }
@@ -801,7 +800,53 @@ body.admin-area .tox .tox-dialog{
     box-shadow: 0px 10px 40px rgba(0,0,0,.3);
 }
 
-.tox .tox-button--naked.tox-button--icon:hover:not(:disabled){
+body.admin-area .tox .tox-button--naked.tox-button--icon:hover:not(:disabled){
     border-radius: 100px;
     overflow: hidden;
+}
+
+body.admin-area .tox.tox-tinymce{
+    overflow: visible !important;
+}
+
+body.admin-area button[aria-label="Source code"]{
+    position: absolute;
+    top: -36px;
+    right: -1px;
+    border: 1px solid #ccc;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+body.admin-area button[aria-label="Preview"]{
+    position: absolute;
+    top: -36px;
+    right: 86px;
+    border: 1px solid #ccc;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+body.admin-area button[aria-label="Fullscreen"]{
+    position: absolute;
+    right: 2px;
+}
+
+body.admin-area button[aria-label="Source code"] span,
+body.admin-area button[aria-label="Preview"] span{
+    cursor: pointer;
+}
+
+body.admin-area button[aria-label="Source code"]:hover,
+body.admin-area button[aria-label="Preview"]:hover{
+    border: 1px solid transparent;
+}
+
+body.admin-area button[aria-label="Word count"],
+body.admin-area button[aria-label="Page break"]{
+    display: none !important;
 }

@@ -26,8 +26,8 @@ jQuery(document).ready(function(){
         skin: 'LoranCS',
         menubar: false,
         content_style: 'body{font-size: 14pt;font-family:serif;}',
-        toolbar: 'styleselect | bold italic forecolor backcolor | align | link | image media table visualblocks | code | outdent indent searchreplace | pagebreak | preview wordcount fullscreen',
-        plugins: 'code image imagetools link fullscreen media pagebreak preview searchreplace table visualblocks wordcount textcolor'
+        toolbar: 'styleselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | hr | link | image media table visualblocks | outdent indent blockquote searchreplace | pagebreak code preview wordcount fullscreen',
+        plugins: 'code image imagetools link fullscreen media pagebreak preview searchreplace table visualblocks wordcount hr'
     });
     // Permalink generator
     $('form.editor_form input.title').on('change', function(){
@@ -39,4 +39,6 @@ jQuery(document).ready(function(){
             $('input.permalink_input').attr('value', '');
         }
     });
+    // Code editor button
+    $('body.admin-area button[aria-label="Source code"]').text('test');
 });
