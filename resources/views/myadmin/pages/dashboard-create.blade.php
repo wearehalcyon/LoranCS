@@ -23,7 +23,7 @@
                         {{ __('Permalink: ') }}
                         <a href="{{ Core::getOption('siteurl') . '/' }}">{{ Core::getOption('siteurl') . '/' }}</a>
                     </strong>
-                    <input type="text" name="slug" value="" class="input is-small permalink_input">
+                    <input type="text" name="slug" value="" class="input is-small permalink_input">/
                 </div>
                 <div class="form_control add_media">
                     <a href="#" class="button is_small">
@@ -32,7 +32,30 @@
                     </a>
                 </div>
                 <div class="form_control content_editor">
-                    <textarea class="textarea has-fixed-size field_editor"></textarea>
+                    <textarea class="textarea has-fixed-size field_editor" name="content"></textarea>
+                </div>
+                <div class="form_control excerpt_editor">
+                    <h4>Excerpt</h4>
+                    <textarea class="textarea has-fixed-size" name="excerpt" rows="3"></textarea>
+                </div>
+                <div class="form_control excerpt_editor">
+                    <h4>Authors</h4>
+                    <div class="select is-small">
+                        <select name="author_id">
+                            @foreach($authors as $author)
+                                <option value="{{ $author->id }}">{{ $author->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="form_control excerpt_editor">
+                    <h4>Discussion</h4>
+                    <div class="select is-small">
+                        <select name="comment_status">
+                            <option value="opened">{{ __('Opened') }}</option>
+                            <option value="closed">{{ __('Closed') }}</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div class="right_side">
@@ -48,6 +71,7 @@
                                 </select>
                             </div>
                         </div>
+                        <!-- DATE PICKER
                         <div class="form_control">
                             <h6 class="card_action_title">{{ __('Date') }}</h6>
                             <ul class="date_listing">
@@ -89,9 +113,10 @@
                                 </li>
                             </ul>
                         </div>
+                        -->
                     </div>
                     <div class="card-footer card-footer-gray">
-                        <button type="button" class="button is-primary">{{ __('Publish') }}</button>
+                        <button type="submit" class="button is-primary">{{ __('Publish') }}</button>
                     </div>
                 </div>
                 <div class="card">
@@ -101,7 +126,7 @@
                             <div class="category_listing">
                                 @foreach ( $categories as $category )
                                     <label class="checkbox">
-                                        <input type="checkbox" name="category" value="{{ $category->id }}">
+                                        <input type="checkbox" name="category_id" value="{{ $category->id }}">
                                         {{ $category->name }}
                                     </label>
                                 @endforeach
@@ -113,6 +138,7 @@
                     <div class="card-content">
                         <h4 class="card_title">{{ __('Featured image') }}</h4>
                         <div class="form_control">
+                            <input type="hidden" class="featured_image_field" name="featured_image" value="">
                             <img class="featured_image" src="" alt="{{ __('Featured image') }}">
                             <div class="choose_fimage">
                                 <a href="#">{{ __('Set featured image') }}</a>

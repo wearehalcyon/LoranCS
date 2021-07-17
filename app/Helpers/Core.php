@@ -7,6 +7,7 @@ use App\Models\Menu;
 use App\Models\MenuItem;
 use App\Models\Option;
 use App\Models\Post;
+use App\Models\PostMeta;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -244,6 +245,11 @@ class Core {
         return $category;
     }
 
+    /**
+     * @param string $field
+     * @param null $id
+     * @return mixed
+     */
     public static function getComments($field = 'post_id', $id = null){
         if ( $field == 'user_id' ) {
             $comments = Comment::where([
@@ -255,5 +261,13 @@ class Core {
             ]);
         }
         return $comments;
+    }
+
+    public static function getPostMeta($post_id, $meta_key){
+        $meta_object = PostMeta::where([
+            'post_id' => $post_id,
+            'meta_key' => $meta_key
+        ])->first();
+        return $meta_object;
     }
 }

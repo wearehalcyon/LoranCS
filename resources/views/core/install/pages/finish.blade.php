@@ -16,7 +16,7 @@
         <div class="copyright">Copyright by INTAKE Digital &copy {{ date('Y') }}<br>Version: 1.0.2</div>
         <div class="preloader">
             <div class="preloader-animation">
-                <img src="{{ asset('includes/images/ghost.gif') }}" alt="Preloader">
+                <img src="{{ asset('public/includes/images/ghost.gif') }}" alt="Preloader">
                 <p><strong>Wait please. Ghost making some actions.</strong></p>
             </div>
         </div>

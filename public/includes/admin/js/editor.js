@@ -26,7 +26,7 @@ jQuery(document).ready(function(){
         skin: 'LoranCS',
         menubar: false,
         content_style: 'body{font-size: 14pt;font-family:serif;}',
-        toolbar: 'styleselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | hr | link | image media table visualblocks | outdent indent blockquote searchreplace | pagebreak code preview wordcount fullscreen',
+        toolbar: 'code preview styleselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | hr | link | image media table visualblocks | outdent indent blockquote searchreplace pagebreak wordcount fullscreen',
         plugins: 'code image imagetools link fullscreen media pagebreak preview searchreplace table visualblocks wordcount hr'
     });
     // Permalink generator
@@ -34,7 +34,7 @@ jQuery(document).ready(function(){
         var text = $(this).val();
         var target = $('input.permalink_input');
         if ( text.length && target.val().length == '' ) {
-            $('input.permalink_input').attr('value', string_to_slug(text) + '/');
+            $('input.permalink_input').attr('value', string_to_slug(text));
         } else {
             $('input.permalink_input').attr('value', '');
         }

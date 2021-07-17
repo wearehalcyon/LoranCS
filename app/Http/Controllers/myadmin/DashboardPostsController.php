@@ -4,6 +4,8 @@ namespace App\Http\Controllers\myadmin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\PostMeta;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\File;
@@ -51,7 +53,11 @@ class DashboardPostsController extends Controller
             'id' => $id
         ])->first();
 
-        Session::flash('removed', 'Post <strong>' . $post->title . '</strong> was deleted successfully!');
+        $thumbnail = PostMeta::where([
+            'post_id' => $id
+        ])->delete();
+
+        Session::flash('post-session', 'Post <strong>' . $post->title . '</strong> was deleted successfully!');
 
         $post->delete();
 
@@ -63,6 +69,8 @@ class DashboardPostsController extends Controller
      */
     public function createPost(){
         $categories = Category::get();
+
+        $authors = User::get();
 
         // Files
         $images = scandir(public_path('uploads/images'));
@@ -119,7 +127,8 @@ class DashboardPostsController extends Controller
             'audios' => $audios,
             'videos' => $videos,
             'documents' => $documents,
-            'extensions' => $extensions
+            'extensions' => $extensions,
+            'authors' => $authors
         ]);
     }
     /**
@@ -130,5 +139,43 @@ class DashboardPostsController extends Controller
         if (File::exists($file)) {
             File::delete($file);
         }
+    }
+
+    /**
+     * Create post submit form
+     */
+    public function createPostSubmit(Request $request){
+
+        // Insert new post
+        $post = new Post();
+
+        $post->title = $request->input('title') ? $request->input('title') : 'Untitled-' . date('mdyHIs');
+        $post->user_id = $request->input('author_id');
+        $post->content = $request->input('content');
+        $post->excerpt = $request->input('excerpt');
+        $post->status = $request->input('status');
+        $post->comment_status = $request->input('comment_status');
+        $post->slug = $request->input('slug') ? $request->input('slug') : 'untitled-' . date('mdyHIs');
+        $post->date = date('Y-m-d H:i:s');
+        $post->modified = date('Y-m-d H:i:s');
+        $post->parent = 0;
+        $post->post_type = 'post';
+        $post->category_id = $request->input('category_id');
+        $post->save();
+
+        // Insert post thumbnail if available
+        if ($request->input('featured_image')) {
+            $thumbnail = new PostMeta();
+
+            $thumbnail->post_id = $post->id;
+            $thumbnail->meta_key = 'post_thumbnail';
+            $thumbnail->meta_value = $request->input('featured_image');
+            $thumbnail->date = date('Y-m-d H:i:s');
+            $thumbnail->save();
+        }
+
+        Session::flash('post-session', 'Post <strong>' . $request->input('title') . '</strong> was created successfully!');
+
+        return redirect(route('my-admin-posts'));
     }
 }

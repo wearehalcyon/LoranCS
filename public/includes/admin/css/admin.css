@@ -234,8 +234,10 @@ table.admin_table tbody tr th.thumbnail{
 }
 
 table.admin_table tbody tr th.thumbnail img{
-    width: auto;
-    height: 30px;
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 table.admin_table tbody tr th.thumbnail img.none{
@@ -811,24 +813,28 @@ body.admin-area .tox.tox-tinymce{
 
 body.admin-area button[aria-label="Source code"]{
     position: absolute;
-    top: -36px;
+    top: -33px;
     right: -1px;
     border: 1px solid #ccc;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    padding: 5px 20px;
+    padding: 7px 10px;
+    height: auto;
     cursor: pointer;
+    font-size: 12px;
 }
 
 body.admin-area button[aria-label="Preview"]{
     position: absolute;
-    top: -36px;
-    right: 86px;
+    top: -33px;
+    right: 62px;
     border: 1px solid #ccc;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    padding: 5px 20px;
+    padding: 7px 10px;
+    height: auto;
     cursor: pointer;
+    font-size: 12px;
 }
 
 body.admin-area button[aria-label="Fullscreen"]{
@@ -849,4 +855,8 @@ body.admin-area button[aria-label="Preview"]:hover{
 body.admin-area button[aria-label="Word count"],
 body.admin-area button[aria-label="Page break"]{
     display: none !important;
+}
+
+.excerpt_editor{
+    margin-top: 30px;
 }

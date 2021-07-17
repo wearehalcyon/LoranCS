@@ -116,6 +116,7 @@ jQuery(document).ready(function($){
                 'display': 'block',
                 'opacity': 1
             });
+            $('input.featured_image_field').attr('value', $('.filesource').val());
         } else {
             $('.error_format').fadeIn(100);
         }
