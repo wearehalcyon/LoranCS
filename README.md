@@ -1,1 +1,1 @@
-# LoranCS v 1.0.1 build 071321 [Alpha]
+# LoranCS v 1.0.2 build 071721 [Alpha]

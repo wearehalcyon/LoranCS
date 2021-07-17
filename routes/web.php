@@ -32,14 +32,14 @@ Route::prefix('install-engine')->group(function(){
 // Admin routes
 Route::middleware('auth')->prefix('my-admin')->group(function(){
     Route::get('/', 'App\Http\Controllers\myadmin\DashboardController@index')->name('my-admin');
+    // Posts
     Route::get('/posts', 'App\Http\Controllers\myadmin\DashboardPostsController@index')->name('my-admin-posts');
     Route::get('/posts/edit', function(){
         return redirect(route('my-admin-posts'));
     });
-    // Posts
     Route::get('/posts/edit/{id}', 'App\Http\Controllers\myadmin\DashboardPostsController@index')->name('my-admin-post-edit');
     Route::get('/posts/create', 'App\Http\Controllers\myadmin\DashboardPostsController@createPost')->name('my-admin-create-post');
-    Route::get('/posts/create/submit', 'App\Http\Controllers\myadmin\DashboardPostsController@createPostSubmit')->name('my-admin-create-post-submit');
+    Route::post('/posts/create/submit', 'App\Http\Controllers\myadmin\DashboardPostsController@createPostSubmit')->name('my-admin-create-post-submit');
     Route::get('/posts/delete/{id}', 'App\Http\Controllers\myadmin\DashboardPostsController@deletePost')->name('my-admin-post-delete');
     Route::post('/delete-file', 'App\Http\Controllers\myadmin\DashboardPostsController@deleteFile')->name('my-admin-post-delete-file');
     // Documentation

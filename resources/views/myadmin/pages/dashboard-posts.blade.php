@@ -5,10 +5,10 @@
 @section('title', 'All Posts')
 
 @section('content')
-    @if(Session::has('removed'))
+    @if(Session::has('post-session'))
         <div class="notification is-primary">
             <button class="delete"></button>
-            {!! Session::get('removed') !!}
+            {!! Session::get('post-session') !!}
         </div>
     @endif
     <div class="posts_count">
@@ -64,9 +64,15 @@
                 </tr>
             </tfoot>
             <tbody>
-                <?php foreach ( $posts as $post ) : ?>
+                @foreach ( $posts as $post )
                     <tr>
-                        <th class="thumbnail"><img src="{{ asset('public/includes/images/picture.svg') }}" class="none" alt="{{ __('No Thumbnail') }}"></th>
+                        <th class="thumbnail">
+                            @if ( Core::getPostMeta($post->id, 'post_thumbnail') )
+                                <img src="{{ asset('public/uploads/' . Core::getPostMeta($post->id, 'post_thumbnail')) }}" class="none" alt="{{ $post->title }}">
+                            @else
+                                <img src="{{ asset('public/includes/images/picture.svg') }}" class="none" alt="{{ __('No Thumbnail') }}">
+                            @endif
+                        </th>
                         <td class="title">
                             <a class="post_title" href="{{ route('my-admin-post-edit', [$post->id]) }}">{{ $post->title }}</a>
                             <div class="post_actions">
@@ -77,13 +83,17 @@
                                 </ul>
                             </div>
                         </td>
-                        <td class="category">{{ Core::getPostCategory($post->category_id)->name }}</td>
+                        @if($post->category_id)
+                            <td class="category">{{ Core::getPostCategory($post->category_id)->name }}</td>
+                        @else
+                            <td class="category"></td>
+                        @endif
                         <td class="author">{{ Core::getAuthor($post->user_id)->name }}</td>
                         <td class="comments">{{ Core::getComments('post_id', $post->id)->count() }}</td>
                         <td class="date">{{ date('F d, Y - H:i:s', strtotime($post->date)) }}</td>
                         <td class="type">{{ ucfirst($post->post_type) }}</td>
                     </tr>
-                <?php endforeach; ?>
+                @endforeach
             </tbody>
         </table>
         <div class="page_actions bottom">
