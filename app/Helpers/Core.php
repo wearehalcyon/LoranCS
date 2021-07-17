@@ -231,7 +231,8 @@ class Core {
      * @return string
      */
     public static function trimWords($content = null, $limit = null, $end = null){
-        return Str::limit($content, $limit, $end);
+        $ClearText = preg_replace( "/\n\s+/", "\n", rtrim(html_entity_decode(strip_tags($content))) );
+        return Str::limit($ClearText, $limit, $end);
     }
 
     /**
