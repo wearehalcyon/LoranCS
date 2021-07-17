@@ -68,7 +68,7 @@
                     <tr>
                         <th class="thumbnail">
                             @if ( Core::getPostMeta($post->id, 'post_thumbnail') )
-                                <img src="{{ asset('public/uploads/' . Core::getPostMeta($post->id, 'post_thumbnail')) }}" class="none" alt="{{ $post->title }}">
+                                <img src="{{ asset('public/uploads/' . Core::getPostMeta($post->id, 'post_thumbnail')->meta_value) }}" class="none" alt="{{ $post->title }}">
                             @else
                                 <img src="{{ asset('public/includes/images/picture.svg') }}" class="none" alt="{{ __('No Thumbnail') }}">
                             @endif
