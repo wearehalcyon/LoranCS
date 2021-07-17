@@ -30,7 +30,7 @@ Route::prefix('install-engine')->group(function(){
 });
 
 // Admin routes
-Route::middleware('auth')->prefix('my-admin')->group(function(){
+Route::middleware('auth')->prefix('cs-admin')->group(function(){
     Route::get('/', 'App\Http\Controllers\myadmin\DashboardController@index')->name('my-admin');
     // Posts
     Route::get('/posts', 'App\Http\Controllers\myadmin\DashboardPostsController@index')->name('my-admin-posts');

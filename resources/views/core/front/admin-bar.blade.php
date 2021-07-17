@@ -13,7 +13,7 @@
                 <img src="<?php echo $loran_ico; ?>" alt="">
             </a>
         </li>
-        <?php if ( $route_dashboard == 'my-admin' ) : ?>
+        <?php if ( $route_dashboard == 'cs-admin' ) : ?>
             <li>
                 <a href="<?php echo $url_home; ?>"><i class="icofont-home"></i><?php echo $sitename; ?></a>
             </li>
