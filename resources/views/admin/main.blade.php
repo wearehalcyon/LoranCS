@@ -14,14 +14,14 @@
     <body class="admin-area">
         <div class="wrapp">
             <aside class="sidebar">
-                @include('myadmin.partials.sidebar')
+                @include('admin.partials.sidebar')
             </aside>
             <main class="content">
                 <div class="content_wrapp">
                     <h1 class="title">@yield('title')</h1>
                     @yield('content')
                 </div>
-                @include('myadmin.partials.footer')
+                @include('admin.partials.footer')
             </main>
         </div>
         <?php require_once resource_path('views/core/front/admin-bar.blade.php'); ?>

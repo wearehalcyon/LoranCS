@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\myadmin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,6 +11,6 @@ class DashboardController extends Controller{
     }
 
     public function index(){
-        return View('myadmin.pages.dashboard');
+        return View('admin.pages.dashboard');
     }
 }

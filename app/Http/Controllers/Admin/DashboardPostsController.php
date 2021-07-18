@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\myadmin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -38,7 +38,7 @@ class DashboardPostsController extends Controller
             'post_type' => 'post'
         ])->count();
 
-        return View('myadmin.pages.dashboard-posts', [
+        return View('admin.pages.dashboard-posts', [
             'posts' => $posts,
             'count' => $count
         ]);
@@ -121,7 +121,7 @@ class DashboardPostsController extends Controller
             ]
         ];
 
-        return view('myadmin.pages.dashboard-create', [
+        return view('admin.pages.dashboard-create', [
             'categories' => $categories,
             'images' => $images,
             'audios' => $audios,

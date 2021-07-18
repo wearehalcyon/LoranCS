@@ -1,4 +1,4 @@
-@extends('myadmin.main')
+@extends('admin.main')
 
 @section('head-title', 'Dashboard - All Posts - ' . Core::getOption('sitename'))
 
@@ -101,7 +101,7 @@
                 <a href="{{ route('my-admin-create-post') }}" class="button is-small is-primary">Create New</a>
             </div>
             <div class="links">
-                {{ $posts->links('myadmin.partials.paginate') }}
+                {{ $posts->links('admin.partials.paginate') }}
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-@extends('myadmin.main')
+@extends('admin.main')
 
 @section('head-title', 'Dashboard - ' . Core::getOption('sitename'))
 

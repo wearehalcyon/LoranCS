@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\myadmin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,6 +11,6 @@ class DashboardDocumentationController extends Controller{
     }
 
     public function documentation(){
-        return view('myadmin.pages.dashboard-docs');
+        return view('admin.pages.dashboard-docs');
     }
 }

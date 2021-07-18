@@ -1,4 +1,4 @@
-@extends('myadmin.main')
+@extends('admin.main')
 
 @section('head-title', 'Dashboard - Documentation - ' . Core::getOption('sitename'))
 
@@ -17,17 +17,17 @@
             <ul>
                 <li id="laravel" class="tab_content active">
                     <div class="tabcontent">
-                        @include('myadmin.partials.docs.laravel')
+                        @include('admin.partials.docs.laravel')
                     </div>
                 </li>
                 <li id="start" class="tab_content">
                     <div class="tabcontent">
-                        @include('myadmin.partials.docs.loran')
+                        @include('admin.partials.docs.loran')
                     </div>
                 </li>
                 <li id="development" class="tab_content">
                     <div class="tabcontent">
-                        @include('myadmin.partials.docs.development')
+                        @include('admin.partials.docs.development')
                     </div>
                 </li>
             </ul>

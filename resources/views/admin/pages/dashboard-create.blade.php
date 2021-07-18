@@ -1,4 +1,4 @@
-@extends('myadmin.main')
+@extends('admin.main')
 
 @section('head-title', 'Dashboard - New Post - ' . Core::getOption('sitename'))
 
@@ -150,10 +150,10 @@
         </div>
     </form>
     <div class="set_fimage">
-        @include('myadmin.partials.media-files-popup')
+        @include('admin.partials.media-files-popup')
     </div>
     <div class="add_image_to_editor">
-        @include('myadmin.partials.media-files-popup-tinymce')
+        @include('admin.partials.media-files-popup-tinymce')
     </div>
 @endsection
 
