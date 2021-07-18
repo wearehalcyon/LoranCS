@@ -90,7 +90,7 @@
                         @endif
                         <td class="author">{{ Core::getAuthor($post->user_id)->name }}</td>
                         <td class="comments">{{ Core::getComments('post_id', $post->id)->count() }}</td>
-                        <td class="date">{{ date('F d, Y - H:i:s', strtotime($post->date)) }}</td>
+                        <td class="date">{{ date('F d, Y - H:i', strtotime($post->date)) }}</td>
                         <td class="type">{{ ucfirst($post->post_type) }}</td>
                     </tr>
                 @endforeach

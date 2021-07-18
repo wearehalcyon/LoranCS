@@ -37,9 +37,13 @@ Route::middleware('auth')->prefix('cs-admin')->group(function(){
     Route::get('/posts/edit', function(){
         return redirect(route('my-admin-posts'));
     });
-    Route::get('/posts/edit/{id}', 'App\Http\Controllers\Admin\DashboardPostsController@index')->name('my-admin-post-edit');
+    Route::get('/posts/edit/{id}', 'App\Http\Controllers\Admin\DashboardPostsController@editPost')->name('my-admin-post-edit');
     Route::get('/posts/create', 'App\Http\Controllers\Admin\DashboardPostsController@createPost')->name('my-admin-create-post');
     Route::post('/posts/create/submit', 'App\Http\Controllers\Admin\DashboardPostsController@createPostSubmit')->name('my-admin-create-post-submit');
+    Route::post('/posts/edit/submit', 'App\Http\Controllers\Admin\DashboardPostsController@updatePostSubmit')->name('my-admin-update-post-submit');
+    Route::get('/posts/update', function(){
+        return redirect(route('my-admin-posts'));
+    });
     Route::get('/posts/delete/{id}', 'App\Http\Controllers\Admin\DashboardPostsController@deletePost')->name('my-admin-post-delete');
     Route::post('/delete-file', 'App\Http\Controllers\Admin\DashboardPostsController@deleteFile')->name('my-admin-post-delete-file');
     // Documentation

@@ -25,6 +25,9 @@ jQuery(document).ready(function(){
         height: 500,
         skin: 'LoranCS',
         menubar: false,
+        relative_urls : false,
+        remove_script_host : false,
+        document_base_url : document.location.origin,
         content_style: 'body{font-size: 14pt;font-family:serif;}',
         toolbar: 'code preview styleselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | hr | link | image media table visualblocks | outdent indent blockquote searchreplace pagebreak wordcount fullscreen',
         plugins: 'code image imagetools link fullscreen media pagebreak preview searchreplace table visualblocks wordcount hr'
@@ -36,7 +39,7 @@ jQuery(document).ready(function(){
         if ( text.length && target.val().length == '' ) {
             $('input.permalink_input').attr('value', string_to_slug(text));
         } else {
-            $('input.permalink_input').attr('value', '');
+            $('input.permalink_input').attr('value', target.val());
         }
     });
     // Code editor button

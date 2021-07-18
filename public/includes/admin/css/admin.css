@@ -862,3 +862,12 @@ body.admin-area button[aria-label="Page break"]{
 .excerpt_editor{
     margin-top: 30px;
 }
+
+a.remove_fimage{
+    display: none;
+    color: #b41e1e;
+}
+
+a.remove_fimage:hover{
+    color: #f00;
+}

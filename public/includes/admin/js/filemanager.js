@@ -115,11 +115,24 @@ jQuery(document).ready(function($){
                 'opacity': 1
             });
             $('input.featured_image_field').attr('value', $('.filesource').val());
+            $('a.remove_fimage').css('display', 'inline-block');
         } else {
             $('.error_format').fadeIn(100);
         }
     });
-
+    // Remove featured image
+    if ( $('img.featured_image').attr('src').length ) {
+        $('a.remove_fimage').css('display', 'inline-block');
+    }
+    $('a.remove_fimage').on('click', function(e){
+        e.preventDefault();
+        $('input.featured_image_field').attr('value', '');
+        $('img.featured_image').attr('src', '').css({
+            'display': 'none',
+            'opacity': 0
+        });
+        $(this).css('display', 'none');
+    });
 
 
 
