@@ -3,7 +3,7 @@
 @section('site-title', config('app.name', 'Laravel') . ' - Login')
 
 @section('content')
-    <div class="form-card">
+    <div class="form-card @error('email') is-error-form @enderror @error('password') is-error-form @enderror">
         <div class="form-logo">
             <img src="{{ asset('public/includes/images/loran-logo-colored.svg') }}" alt="HypeForm CMS Logo">
         </div>
@@ -12,20 +12,10 @@
 
             <div class="formcontroll">
                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="{{ __('Email') }}" required autocomplete="email" autofocus>
-                @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
             </div>
 
             <div class="formcontroll">
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="{{ __('Password') }}" required autocomplete="current-password">
-                @error('password')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
             </div>
 
             <div class="formcontroll">

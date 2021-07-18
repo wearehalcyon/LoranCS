@@ -37,10 +37,35 @@ a:hover{
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0px 5px 10px rgba(0,0,0,.05);
-    width: 230px;
+    width: 320px;
     max-width: 100%;
     margin: 0 20px;
     overflow: hidden;
+}
+
+.form-card.is-error-form{
+    animation: error_shake .3s ease;
+}
+
+@keyframes error_shake {
+    0%{
+        transform: translateX(10px);
+    }
+    20%{
+        transform: translateX(-10px);
+    }
+    40%{
+        transform: translateX(10px);
+    }
+    60%{
+        transform: translateX(-10px);
+    }
+    80%{
+        transform: translateX(10px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
 }
 
 body.engine-installation .form-card{
@@ -58,11 +83,10 @@ body.engine-installation .form-card{
 .formcontroll input[type="password"]{
     width: calc(100% - 22px);
     border: 1px solid #ccc;
-    padding: 4px 10px;
+    padding: 8px 10px;
     border-radius: 4px;
     font-size: 20px;
     font-weight: 400;
-    transition: all .2s;
 }
 
 .formcontroll input[type="text"]:focus,
@@ -78,14 +102,22 @@ body.engine-installation .form-card{
     font-size: 13px;
 }
 
+.formcontroll input.is-invalid,
+.formcontroll input.is-invalid[type="text"],
+.formcontroll input.is-invalid[type="email"],
+.formcontroll input.is-invalid[type="password"]{
+    border-color: #f00;
+    box-shadow: 0px 0px 2px #f00;
+}
+
 .button{
     border: none;
     background-color: #00acff;
     color: #fff;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 4px;
-    padding: 4px 10px;
+    padding: 8px 20px;
     text-shadow: 1px 1px 1px rgba(0,0,0,.2);
     cursor: pointer;
     text-decoration: none;
@@ -109,6 +141,7 @@ body.engine-installation .form-card{
     display: block;
     position: relative;
     text-align: center;
+    margin: 20px 0;
 }
 
 .form-logo img{
