@@ -48,7 +48,7 @@ return [
             'url' => null,
             'host' => 'localhost',
             'port' => '3306',
-            'database' => 'lorancs',
+            'database' => 'hypeform',
             'username' => 'root',
             'password' => 'root',
             'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock', // /Applications/MAMP/tmp/mysql/mysql.sock
