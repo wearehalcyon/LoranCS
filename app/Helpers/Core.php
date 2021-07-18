@@ -17,7 +17,8 @@ use Illuminate\Support\Str;
 class Core {
     public static function App(){
         return [
-            'appname' => '<a href="https://loranengine.org/" target="_blank">LoranCS</a>',
+            'appname' => 'LoranCS',
+            'appurl' => '<a href="https://lorancs.org/" target="_blank">LoranCS</a>',
             'ver' => '1.0.2',
             'build' => '071721',
             'release' => 'alpha',

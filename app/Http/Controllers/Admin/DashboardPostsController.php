@@ -307,7 +307,7 @@ class DashboardPostsController extends Controller
             $thumbnail->meta_value = $request->input('featured_image');
             $thumbnail->date = date('Y-m-d H:i:s');
             $thumbnail->save();
-        } else {
+        } elseif (!$request->input('featured_image') && $thumbnail_val) {
             $thumbnail->delete();
         }
 

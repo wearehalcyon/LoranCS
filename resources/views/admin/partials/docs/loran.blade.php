@@ -1,6 +1,6 @@
 <h2>Loran Quick Start</h2>
 <p>Firstly you must create your own database. You can use <a href="https://www.phpmyadmin.net/" target="_blank">PhpMyAdmin</a> tool for that.</p>
-<p>Please be sure that your system requirements are good for <?php echo Core::App()['appname']; ?>.</p>
+<p>Please be sure that your system requirements are good for <?php echo Core::App()['appurl']; ?>.</p>
 <h3>Minimum System Requirements:</h3>
 <code>
     <p><strong>PHP Version:</strong> 7.4</p>

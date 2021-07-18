@@ -7,7 +7,7 @@
         <div class="form-logo">
             <img src="{{ asset('public/includes/images/loran-logo-colored.svg') }}" alt="HypeForm CMS Logo">
         </div>
-        <h1>Install {{ Core::App()['codename'] }}</h1>
+        <h1>Install {{ Core::App()['appname'] }}</h1>
         <p class="desc">Welcome to installation wizard</p>
         <div class="license-agreement">
             <p>

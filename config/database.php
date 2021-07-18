@@ -54,7 +54,7 @@ return [
             'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock', // /Applications/MAMP/tmp/mysql/mysql.sock
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix' => 'hfp_',
+            'prefix' => 'cs_',
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
