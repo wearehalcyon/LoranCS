@@ -13,11 +13,12 @@ body{
 
 a{
     text-decoration: none;
-    color: #1ba7a7;
+    color: #485fc7;
+    font-weight: 500;
 }
 
 a:hover{
-    color: #139494;
+    color: #1934aa;
 }
 
 .wrapper{
@@ -82,8 +83,8 @@ a:hover{
 
 .sidebar_menu li:hover a{
     background-color: rgba(255,255,255,.05);
-    color: #76fff5;
-    border-left: 3px solid #76fff5;
+    color: #9fbaff;
+    border-left: 3px solid #9fbaff;
 }
 
 footer.footer{
@@ -152,7 +153,7 @@ footer.footer{
 
 .docs_links ul li.active a,
 .docs_links ul li.active:hover a{
-    background-color: #1ba7a7;
+    background-color: #485fc7;
     color: #fff;
 }
 
@@ -182,7 +183,7 @@ footer.footer{
 .docs_content ul li{
     display: none;
     position: relative;
-    border-left: 3px solid #1ba7a7;
+    border-left: 3px solid #485fc7;
     padding-left: 15px;
     width: 100%;
 }
@@ -567,11 +568,11 @@ ul.date_listing li.year{
 
 .ml_files ul.ml_tabs li.active a{
     background-color: rgba(0,0,0,.05);
-    color: #1ba7a7;
+    color: #485fc7;
 }
 
 .ml_files ul.ml_tabs li a:hover{
-    color: #1ba7a7;
+    color: #485fc7;
 }
 
 .ml_sidebar{
@@ -623,8 +624,8 @@ ul.date_listing li.year{
 
 .ml_files .ml_tab_content li span.ml_file.active,
 .ml_files .ml_tab_content li span.ml_file.active:hover{
-    border-color: #1ba7a7;
-    background-color: #1ba7a7;
+    border-color: #485fc7;
+    background-color: #485fc7;
 }
 
 .ml_files .ml_tab_content li span.ml_file.active::before{
@@ -1041,4 +1042,112 @@ button.action_upload.open{
 
 .content table tbody tr td.menu_name a{
     font-weight: 600;
+}
+
+.create_menu_container{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ccc;
+}
+
+.create_menu_sidebar{
+    width: 400px;
+    border-right: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+.create_menu_sidebar h4{
+    padding: 0 20px;
+}
+
+.create_menu_sidebar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.create_menu_sidebar ul li{
+    font-size: 0;
+}
+
+.create_menu_sidebar ul li a{
+    display: block;
+    position: relative;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 20px;
+    margin-top: -1px;
+    background-color: rgba(0,0,0,.02);
+    font-size: 14px;
+}
+
+.create_menu_sidebar ul li a:hover{
+    background-color: rgba(0,0,0,.05);
+}
+
+.create_menu_sidebar ul li a i{
+    display: none;
+    position: absolute;
+    top: calc(50% - 8px);
+    right: 20px;
+    color: #999;
+}
+
+.create_menu_sidebar ul li a:hover i{
+    display: inline-block;
+}
+
+.create_menu_content{
+    width: calc(100% - 400px);
+}
+
+.submit_menu_form{
+    display: block;
+    width: 100%;
+}
+
+.submit_new_menu{
+    width: 100%;
+    padding: 15px;
+}
+
+.submit_new_menu button{
+    font-weight: 600;
+}
+
+.create_menu_content .formcontroll{
+    display: block;
+    padding: 10px 15px;
+}
+
+.create_menu_content .formcontroll label{
+    display: block;
+    width: 100%;
+}
+
+.create_menu_content .formcontroll label span{
+    display: block;
+    font-weight: 600;
+}
+
+.create_menu_content .formcontroll input.name{
+    width: 260px;
+    max-width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.back_to_all{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+a.delete_menu{
+    color: #c11d1d;
+}
+
+a.delete_menu:hover{
+    color: #f00;
 }

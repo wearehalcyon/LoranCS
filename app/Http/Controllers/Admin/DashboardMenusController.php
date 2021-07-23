@@ -15,6 +15,10 @@ class DashboardMenusController extends Controller{
         $this->middleware('auth');
     }
 
+    /**
+     * @return
+     * Menu list
+     */
     public function index(){
         $menus = Menu::get();
         return view('admin.pages.dashboard-menus', [
@@ -22,6 +26,36 @@ class DashboardMenusController extends Controller{
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return
+     * Submit new menu
+     */
+    public function createMenuSubmit(Request $request){
+        $menu = new Menu();
+        $menu->menu_name = $request->input('menu_name');
+        $menu->menu_location = $request->input('menu_location');
+        $menu->save();
+
+        Session::flash('menus-session', 'Menu was added successfully!');
+
+        return redirect()->route('my-admin-edit-menu', [$menu->id]);
+    }
+
+    public function editMenu($id){
+        $menu = Menu::where([
+            'id' => $id
+        ])->first();
+        return view('admin.pages.dashboard-edit-menu', [
+            'menu' => $menu
+        ]);
+    }
+
+    /**
+     * @param $id
+     * @return
+     * Delete menu
+     */
     public function deleteMenu($id){
         $menu = Menu::where([
             'id' => $id
@@ -29,6 +63,6 @@ class DashboardMenusController extends Controller{
 
         Session::flash('menus-session', 'Menu was deleted successfully!');
 
-        return redirect()->back();
+        return redirect()->route('my-admin-menus');
     }
 }

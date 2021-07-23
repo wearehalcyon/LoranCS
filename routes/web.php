@@ -53,7 +53,12 @@ Route::middleware('auth')->prefix('cs-admin')->group(function(){
     Route::post('/themes/upload', 'App\Http\Controllers\Admin\DashboardThemesController@uploadTheme')->name('my-admin-upload-theme');
     // Menus
     Route::get('/menus', 'App\Http\Controllers\Admin\DashboardMenusController@index')->name('my-admin-menus');
-    Route::get('/menus/create', 'App\Http\Controllers\Admin\DashboardMenusController@createMenu')->name('my-admin-create-menu');
+    Route::post('/menus/create/submit', 'App\Http\Controllers\Admin\DashboardMenusController@createMenuSubmit')->name('my-admin-create-menu-submit');
+    Route::get('/menus/edit/{id}', 'App\Http\Controllers\Admin\DashboardMenusController@editMenu')->name('my-admin-edit-menu');
+    Route::get('/menus/edit', function(){
+        return redirect(route('my-admin-menus'));
+    });
+    Route::post('/menus/edit/submit', 'App\Http\Controllers\Admin\DashboardMenusController@editMenuSubmit')->name('my-admin-edit-menu-submit');
     Route::get('/menus/delete/{id}', 'App\Http\Controllers\Admin\DashboardMenusController@deleteMenu')->name('my-admin-menu-delete');
     // Documentation
     Route::get('/documentation', 'App\Http\Controllers\Admin\DashboardDocumentationController@documentation')->name('my-admin-docs');
