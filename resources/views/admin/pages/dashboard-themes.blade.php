@@ -41,9 +41,11 @@
         </form>
     </div>
     @if(Session::has('theme-action-message'))
-        <div class="notification @if(session('error')) is-danger @else is-primary @endif">
+        <div class="message autohide_message @if(session('error')) is-danger @else is-primary @endif">
             <button class="delete"></button>
-            {!! Session::get('theme-action-message') !!}
+            <div class="message-body">
+                {!! Session::get('theme-action-message') !!}
+            </div>
         </div>
     @endif
     <div class="dash_themes_list">
@@ -67,7 +69,7 @@
                 </div>
             </div>
         </div>
-        <h3>{{ __('Installed Themes') }}</h3>
+        <h3>{{ __('Installed Themes') }}<span></span></h3>
         <div class="installed_themes">
             @foreach($themes_res as $theme)
                 @if(!is_dir($theme) && $theme != $theme_curr && $theme != '.DS_Store')
@@ -130,11 +132,29 @@
             e.preventDefault();
             $(this).toggleClass('is-info');
             $('.theme_uploader').toggleClass('open');
+            if ($('.action_upload').hasClass('open')) {
+                $('.action_upload').removeClass('open');
+                $('span.file-name').text('theme.zip');
+            }
         });
         $('form.upload_new_theme').on('change', function(){
             var filename = $('input[type=file]').val().split('\\').pop();
             $('span.file-name').text(filename);
             $('.action_upload').toggleClass('open');
+        });
+        // Zero themes
+        if ($('.installed_theme_item').length == ''){
+            $('.installed_themes').text('{{ __('Only one theme installed and activated at the moment.') }}');
+        }
+        // Count themes
+        $(function(){
+            var allElems = $('.installed_theme_item');
+            var count = 0;
+            for (var i = 0; i < allElems.length; i++){
+                var thisElem = allElems[i];
+                if (thisElem.length != '') count++;
+            }
+            $('.dash_themes_list h3 span').text(': ' + (count + 1));
         });
     </script>
 @endsection

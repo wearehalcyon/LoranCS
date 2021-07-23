@@ -87,20 +87,20 @@ footer.footer{
     display: -ms-flex;
     display: flex;
     flex-wrap: wrap;
-    position: fixed;
-    width: calc(100% - 260px);
+    position: sticky;
+    width: 100%;
     height: auto;
-    bottom: 0;
-    left: 245px;
+    top: 100%;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 10px 15px;
 }
 
 .content{
     display: block;
     position: relative;
     width: calc(100% - 230px);
+    height: calc(100vh - 35px);
     margin-left: 230px;
     min-height: 100%;
 }
@@ -1014,4 +1014,14 @@ button.action_upload{
 
 button.action_upload.open{
     display: inline-block;
+}
+
+.message{
+    position: relative;
+}
+
+.message button.delete{
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }

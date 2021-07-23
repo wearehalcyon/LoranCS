@@ -92,16 +92,6 @@ class DashboardThemesController extends Controller{
                     if (!File::exists(public_path('themes/' . $pathname)) || !File::exists(resource_path('views/themes/' . $pathname))) {
                         $zip = Zip::open($temp . '/' . $filename);
                         $zip->extract(base_path('/'));
-                        // Remove base MacOS archive dir
-                        if (File::exists(base_path('__MACOSX'))) {
-                            File::deleteDirectory(base_path('__MACOSX'));
-                        }
-                        // Remove uploaded theme from temp dir
-                        File::delete(base_path('temp/') . $filename);
-                        // Check if TEMP empty
-                        if (count(glob(base_path('temp/*'))) === 0) {
-                            File::deleteDirectory(base_path('temp'));
-                        }
                         Session::flash('theme-action-message', 'Theme uploaded successfully!');
                     } else {
                         Session::flash('theme-action-message', 'Theme already installed.');
@@ -110,6 +100,16 @@ class DashboardThemesController extends Controller{
                 } else {
                     Session::flash('theme-action-message', 'Oops! Something went wrong and theme was not uploaded. Try again please.');
                     Session::flash('error');
+                }
+                // Remove base MacOS archive dir
+                if (File::exists(base_path('__MACOSX'))) {
+                    File::deleteDirectory(base_path('__MACOSX'));
+                }
+                // Remove uploaded theme from temp dir
+                File::delete(base_path('temp/') . $filename);
+                // Check if TEMP empty
+                if (count(glob(base_path('temp/*'))) === 0) {
+                    File::deleteDirectory(base_path('temp'));
                 }
             } else {
                 Session::flash('theme-action-message', 'This file is not theme archive. Please choose correct file with .zip extension.');

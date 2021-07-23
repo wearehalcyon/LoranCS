@@ -11,7 +11,11 @@ jQuery(document).ready(function($){
         $(tabname).fadeIn(50);
     });
     // Close notification
-    $('.notification button.delete').on('click', function(){
+    $('.notification button.delete, .message button.delete').on('click', function(){
         $(this).parent().fadeOut(300);
     });
+    // Autohide notification
+    window.setTimeout(function(){
+        $('.autohide_message').fadeOut(300);
+    }, 3000);
 });
