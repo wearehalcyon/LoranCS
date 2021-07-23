@@ -23,9 +23,9 @@
             </li>
         <?php endif; ?>
         <li>
-            <a href="#">
+            <a href="<?php echo route('my-admin-themes'); ?>">
                 <i class="icofont-ui-theme"></i>
-                <?php echo __('Customize'); ?>
+                <?php echo __('Themes'); ?>
             </a>
         </li>
         <li>
@@ -34,11 +34,9 @@
                 <?php echo __('Add'); ?>
             </a>
             <ul class="submenu">
-                <li><a href="#"><?php echo __('Post'); ?></a></li>
+                <li><a href="<?php echo route('my-admin-create-post'); ?>"><?php echo __('Post'); ?></a></li>
                 <li><a href="#"><?php echo __('Page'); ?></a></li>
                 <li><a href="#"><?php echo __('Comment'); ?></a></li>
-                <li><a href="#"><?php echo __('Theme'); ?></a></li>
-                <li><a href="#"><?php echo __('Plugin'); ?></a></li>
                 <li><a href="#"><?php echo __('User'); ?></a></li>
             </ul>
         </li>

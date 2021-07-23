@@ -112,7 +112,7 @@ footer.footer{
 .content_wrapp{
     display: block;
     position: relative;
-    padding: 15px 30px 0;
+    padding: 30px 30px 0;
     margin-bottom: 45px;
 }
 
@@ -1028,4 +1028,17 @@ button.action_upload.open{
     position: absolute;
     top: 5px;
     right: 5px;
+}
+
+.content table tbody tr td.menu_items_count{
+    width: 100px;
+    text-align: center;
+}
+
+.content table tr th.menu_items_count_tbf{
+    text-align: center;
+}
+
+.content table tbody tr td.menu_name a{
+    font-weight: 600;
 }

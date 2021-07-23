@@ -53,6 +53,8 @@ Route::middleware('auth')->prefix('cs-admin')->group(function(){
     Route::post('/themes/upload', 'App\Http\Controllers\Admin\DashboardThemesController@uploadTheme')->name('my-admin-upload-theme');
     // Menus
     Route::get('/menus', 'App\Http\Controllers\Admin\DashboardMenusController@index')->name('my-admin-menus');
+    Route::get('/menus/create', 'App\Http\Controllers\Admin\DashboardMenusController@createMenu')->name('my-admin-create-menu');
+    Route::get('/menus/delete/{id}', 'App\Http\Controllers\Admin\DashboardMenusController@deleteMenu')->name('my-admin-menu-delete');
     // Documentation
     Route::get('/documentation', 'App\Http\Controllers\Admin\DashboardDocumentationController@documentation')->name('my-admin-docs');
 });

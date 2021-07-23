@@ -10,4 +10,8 @@ class Menu extends Model
     use HasFactory;
 
     public $timestamps = false;
+
+    public function items(){
+        return $this->hasMany(MenuItem::class);
+    }
 }

@@ -25,7 +25,7 @@
         <a href="{{ route('my-admin') }}"><i class="icofont-plugin"></i>{{ __('Plugins') }}</a>
     </li>
     <li>
-        <a href="{{ route('my-admin-menus') }}"><i class="icofont-plugin"></i>{{ __('Menus') }}</a>
+        <a href="{{ route('my-admin-menus') }}"><i class="icofont-navigation-menu"></i>{{ __('Menus') }}</a>
     </li>
 </ul>
 <ul class="sidebar_menu">
@@ -44,8 +44,5 @@
     </li>
     <li>
         <a href="{{ route('my-admin-docs') }}"><i class="icofont-document-folder"></i>{{ __('Docs') }}</a>
-    </li>
-    <li>
-        <a href="{{ route('my-admin') }}"><i class="icofont-search-document"></i>{{ __('Help') }}</a>
     </li>
 </ul>
