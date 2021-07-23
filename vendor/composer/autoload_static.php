@@ -46,6 +46,10 @@ class ComposerStaticInit4d35eeab4dfd74d9279641c238b5ae0a
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'Z' => 
+        array (
+            'ZanySoft\\Zip\\' => 13,
+        ),
         'W' => 
         array (
             'Whoops\\' => 7,
@@ -186,6 +190,10 @@ class ComposerStaticInit4d35eeab4dfd74d9279641c238b5ae0a
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'ZanySoft\\Zip\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zanysoft/laravel-zip/src',
         ),
         'Whoops\\' => 
         array (
@@ -513,6 +521,10 @@ class ComposerStaticInit4d35eeab4dfd74d9279641c238b5ae0a
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Helpers\\Core' => __DIR__ . '/../..' . '/app/Helpers/Core.php',
+        'App\\Http\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashboardController.php',
+        'App\\Http\\Controllers\\Admin\\DashboardDocumentationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashboardDocumentationController.php',
+        'App\\Http\\Controllers\\Admin\\DashboardPostsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashboardPostsController.php',
+        'App\\Http\\Controllers\\Admin\\DashboardThemesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashboardThemesController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -527,9 +539,6 @@ class ComposerStaticInit4d35eeab4dfd74d9279641c238b5ae0a
         'App\\Http\\Controllers\\MenuItemController' => __DIR__ . '/../..' . '/app/Http/Controllers/MenuItemController.php',
         'App\\Http\\Controllers\\OptionController' => __DIR__ . '/../..' . '/app/Http/Controllers/OptionController.php',
         'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
-        'App\\Http\\Controllers\\myadmin\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/myadmin/DashboardController.php',
-        'App\\Http\\Controllers\\myadmin\\DashboardDocumentationController' => __DIR__ . '/../..' . '/app/Http/Controllers/myadmin/DashboardDocumentationController.php',
-        'App\\Http\\Controllers\\myadmin\\DashboardPostsController' => __DIR__ . '/../..' . '/app/Http/Controllers/myadmin/DashboardPostsController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -5218,6 +5227,10 @@ class ComposerStaticInit4d35eeab4dfd74d9279641c238b5ae0a
         'Whoops\\Util\\Misc' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/Misc.php',
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
+        'ZanySoft\\Zip\\Zip' => __DIR__ . '/..' . '/zanysoft/laravel-zip/src/Zip.php',
+        'ZanySoft\\Zip\\ZipFacade' => __DIR__ . '/..' . '/zanysoft/laravel-zip/src/ZipFacade.php',
+        'ZanySoft\\Zip\\ZipManager' => __DIR__ . '/..' . '/zanysoft/laravel-zip/src/ZipManager.php',
+        'ZanySoft\\Zip\\ZipServiceProvider' => __DIR__ . '/..' . '/zanysoft/laravel-zip/src/ZipServiceProvider.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',
