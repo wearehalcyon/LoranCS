@@ -14,7 +14,7 @@
 
 @section('content')
     @if(Session::has('removed'))
-        <div class="notification is-primary">
+        <div class="notification is-link">
             <button class="delete"></button>
             {!! Session::get('created') !!}
         </div>
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                     <div class="card-footer card-footer-gray">
-                        <button type="submit" class="button is-primary">{{ __('Update') }}</button>
+                        <button type="submit" class="button is-link">{{ __('Update') }}</button>
                     </div>
                 </div>
                 <div class="card">

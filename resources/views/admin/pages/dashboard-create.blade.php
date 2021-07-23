@@ -6,7 +6,7 @@
 
 @section('content')
     @if(Session::has('removed'))
-        <div class="notification is-primary">
+        <div class="notification is-link">
             <button class="delete"></button>
             {!! Session::get('created') !!}
         </div>
@@ -116,7 +116,7 @@
                         -->
                     </div>
                     <div class="card-footer card-footer-gray">
-                        <button type="submit" class="button is-primary">{{ __('Publish') }}</button>
+                        <button type="submit" class="button is-link">{{ __('Publish') }}</button>
                     </div>
                 </div>
                 <div class="card">
@@ -140,6 +140,9 @@
                         <div class="form_control">
                             <input type="hidden" class="featured_image_field" name="featured_image" value="">
                             <img class="featured_image" src="" alt="{{ __('Featured image') }}">
+                            <div class="rm_fimage">
+                                <a href="#" class="remove_fimage">{{ __('Remove featured image') }}</a>
+                            </div>
                             <div class="choose_fimage">
                                 <a href="#">{{ __('Set featured image') }}</a>
                             </div>

@@ -51,10 +51,10 @@
                 <h5>{{ __('File source URL') }}</h5>
                 <input class="input is-small fileurl" type="text" value="" readonly>
                 <a href="#" class="button is-small is-fullwidth open_file_intab" target="_blank">{!! __('Open file <i class="icofont-external-link"></i>') !!}</a>
-                <a href="#" class="button is-small is-fullwidth is-primary is-outlined download_file_directly" download>{!! __('Download file <i class="icofont-download-alt"></i>') !!}</a>
+                <a href="#" class="button is-small is-fullwidth is-link is-outlined download_file_directly" download>{!! __('Download file <i class="icofont-download-alt"></i>') !!}</a>
             </div>
             <div class="add_file_to_content">
-                <a href="#" class="button is-fullwidth is-primary">{{ __('Add file') }}</a>
+                <a href="#" class="button is-fullwidth is-link">{{ __('Add file') }}</a>
                 <div class="notification is-small is-danger error_format">
                     <button class="delete"></button>
                     {{ __('You can\'t use this file. Please check if file have all requirements.') }}

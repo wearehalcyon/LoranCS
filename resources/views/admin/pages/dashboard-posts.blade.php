@@ -21,13 +21,13 @@
     <div class="post_list">
         <div class="page_actions header_actions">
             <div class="buttons">
-                <a href="{{ route('my-admin-create-post') }}" class="button is-small is-primary">Create New</a>
+                <a href="{{ route('my-admin-create-post') }}" class="button is-small is-link">Create New</a>
             </div>
             <div class="filters">
                 <ul class="filterlist">
                     <li>
                         <strong>Show Posts:</strong>
-                        <div class="select is-primary">
+                        <div class="select">
                             <select class="showposts">
                                 <option value="10" {{ !Request::get('showposts') || Request::get('showposts') == 10 ? 'selected' : null }}>10</option>
                                 <option value="50" {{ Request::get('showposts') == 50 ? 'selected' : null }}>50</option>
@@ -98,7 +98,7 @@
         </table>
         <div class="page_actions bottom">
             <div class="buttons">
-                <a href="{{ route('my-admin-create-post') }}" class="button is-small is-primary">Create New</a>
+                <a href="{{ route('my-admin-create-post') }}" class="button is-small is-link">Create New</a>
             </div>
             <div class="links">
                 {{ $posts->links('admin.partials.paginate') }}

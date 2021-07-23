@@ -83,8 +83,8 @@ a:hover{
 
 .sidebar_menu li:hover a{
     background-color: rgba(255,255,255,.05);
-    color: #9fbaff;
-    border-left: 3px solid #9fbaff;
+    color: #a7c4ff;
+    border-left: 3px solid #a7c4ff;
 }
 
 footer.footer{
