@@ -19,7 +19,7 @@
         <form action="{{ route('my-admin-upload-theme') }}" method="POST" enctype="multipart/form-data" class="upload_new_theme">
             <div class="upload_theme_btn">
                 <a href="#" class="button is-small">{{ __('Upload Theme') }}</a>
-                <button class="button is-small is-primary action_upload">{!! __('<i class="icofont-upload"></i> Upload') !!}</button>
+                <button class="button is-small is-primary action_upload" type="submit">{!! __('<i class="icofont-upload"></i> Upload') !!}</button>
             </div>
             <div class="theme_uploader">
                 @csrf
@@ -31,7 +31,7 @@
                                 <i class="fas fa-upload"></i>
                             </span>
                             <span class="file-label">
-                                Choose a file…
+                                {{ __('Select Theme Installation ZIP') }}
                             </span>
                         </span>
                         <span class="file-name">theme.zip</span>

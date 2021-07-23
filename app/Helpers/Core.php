@@ -19,8 +19,8 @@ class Core {
         return [
             'appname' => 'LoranCS',
             'appurl' => '<a href="https://lorancs.org/" target="_blank">LoranCS</a>',
-            'ver' => '1.0.2',
-            'build' => '071721',
+            'ver' => '1.0.3',
+            'build' => '072321',
             'release' => 'alpha',
             'codename' => 'Neptune',
         ];
