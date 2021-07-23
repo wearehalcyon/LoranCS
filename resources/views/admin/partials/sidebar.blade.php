@@ -24,6 +24,9 @@
     <li>
         <a href="{{ route('my-admin') }}"><i class="icofont-plugin"></i>{{ __('Plugins') }}</a>
     </li>
+    <li>
+        <a href="{{ route('my-admin-menus') }}"><i class="icofont-plugin"></i>{{ __('Menus') }}</a>
+    </li>
 </ul>
 <ul class="sidebar_menu">
     <li class="menu_title">{{ __('Accounts') }}</li>

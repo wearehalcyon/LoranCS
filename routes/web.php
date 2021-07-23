@@ -46,11 +46,14 @@ Route::middleware('auth')->prefix('cs-admin')->group(function(){
     });
     Route::get('/posts/delete/{id}', 'App\Http\Controllers\Admin\DashboardPostsController@deletePost')->name('my-admin-post-delete');
     Route::post('/delete-file', 'App\Http\Controllers\Admin\DashboardPostsController@deleteFile')->name('my-admin-post-delete-file');
-    // Documentation
+    // Themes
     Route::get('/themes', 'App\Http\Controllers\Admin\DashboardThemesController@index')->name('my-admin-themes');
     Route::get('/themes/apply/{name}', 'App\Http\Controllers\Admin\DashboardThemesController@applyTheme')->name('my-admin-apply-theme');
     Route::get('/themes/remove/{name}', 'App\Http\Controllers\Admin\DashboardThemesController@removeTheme')->name('my-admin-remove-theme');
     Route::post('/themes/upload', 'App\Http\Controllers\Admin\DashboardThemesController@uploadTheme')->name('my-admin-upload-theme');
+    // Menus
+    Route::get('/menus', 'App\Http\Controllers\Admin\DashboardMenusController@index')->name('my-admin-menus');
+    // Documentation
     Route::get('/documentation', 'App\Http\Controllers\Admin\DashboardDocumentationController@documentation')->name('my-admin-docs');
 });
 
