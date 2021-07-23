@@ -19,7 +19,7 @@
 <ul class="sidebar_menu">
     <li class="menu_title">{{ __('Appearance') }}</li>
     <li>
-        <a href="{{ route('my-admin') }}"><i class="icofont-ui-theme"></i>{{ __('Themes') }}</a>
+        <a href="{{ route('my-admin-themes') }}"><i class="icofont-ui-theme"></i>{{ __('Themes') }}</a>
     </li>
     <li>
         <a href="{{ route('my-admin') }}"><i class="icofont-plugin"></i>{{ __('Plugins') }}</a>

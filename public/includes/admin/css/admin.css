@@ -871,3 +871,147 @@ a.remove_fimage{
 a.remove_fimage:hover{
     color: #f00;
 }
+
+.current_theme{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+.curr_theme_col{
+    width: 50%;
+    line-height: normal;
+    padding: 15px;
+}
+
+.curr_theme_desc h2{
+    font-size: 52px;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+.curr_theme_desc span{
+    color: #999;
+}
+
+.curr_theme_desc p{
+    margin-top: 10px;
+}
+
+.curr_theme_thumb{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,.03);
+}
+
+.curr_theme_thumb span.no_screenshot,
+.theme_preview span.no_screenshot{
+    color: #b61b1b;
+    font-weight: 600;
+}
+
+.curr_theme_actions{
+    display: block;
+    position: relative;
+    margin-top: 10px;
+}
+
+.installed_themes{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.installed_theme_item{
+    width: 25%;
+    height: auto;
+    padding: 5px;
+}
+
+.theme_ite_container{
+    border: 1px solid rgba(0,0,0,.07);
+    border-radius: 4px;
+    text-align: center;
+    transition: all .2s;
+    padding: 10px;
+}
+
+.theme_ite_container:hover{
+    box-shadow: 0px 10px 15px rgba(0,0,0,.1);
+}
+
+.theme_not_validated{
+    display: block;
+    text-align: center;
+    background-color: #ffdbdb;
+    color: #b61b1b;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px;
+    margin-top: 10px;
+}
+
+.theme_validated{
+    display: block;
+    text-align: center;
+    background-color: #dbffe3;
+    color: #159b2c;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px;
+    margin-top: 10px;
+}
+
+.theme_preview{
+    text-align: center;
+}
+
+.installed_theme_item h4{
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.installed_theme_item span.version{
+    font-size: 13px;
+    color: #999;
+}
+
+.apply_theme,
+.remove_theme{
+    margin-top: 10px;
+}
+
+.installed_themes .installed_theme_item .apply_theme_button{
+    border-radius: 4px;
+}
+
+.upload_new_theme{
+    margin-bottom: 20px;
+}
+
+.theme_uploader{
+    display: none;
+    margin-top: 10px;
+}
+
+.theme_uploader.open{
+    display: block;
+}
+
+.theme_uploader form input{
+    cursor: pointer;
+}
+
+button.action_upload{
+    display: none;
+}
+
+button.action_upload.open{
+    display: inline-block;
+}
