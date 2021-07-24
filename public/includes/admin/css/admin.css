@@ -1053,11 +1053,12 @@ button.action_upload.open{
 .create_menu_sidebar{
     width: 400px;
     border-right: 1px solid #ccc;
-    padding: 20px 0;
+    padding: 0;
 }
 
 .create_menu_sidebar h4{
-    padding: 0 20px;
+    padding: 10px;
+    margin: 0;
 }
 
 .create_menu_sidebar ul{
@@ -1121,8 +1122,8 @@ button.action_upload.open{
 }
 
 .create_menu_content .formcontroll label{
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: auto;
 }
 
 .create_menu_content .formcontroll label span{
@@ -1137,6 +1138,14 @@ button.action_upload.open{
     font-weight: 500;
 }
 
+.create_menu_content .formcontroll span.edit_menu_field_desc{
+    font-size: 14px;
+    font-weight: 400;
+    color: #999;
+    font-style: italic;
+    display: block;
+}
+
 .back_to_all{
     display: flex;
     align-items: center;
@@ -1149,5 +1158,118 @@ a.delete_menu{
 }
 
 a.delete_menu:hover{
+    color: #f00;
+}
+
+.create_menu_sidebar ul.post_list{
+    display: none;
+    margin: 10px;
+    padding: 10px;
+    list-style-type: none;
+    border: 1px solid rgba(0,0,0,.07);
+    border-radius: 4px;
+    width: calc(100% - 20px);
+    min-height: 200px;
+    overflow-y: auto;
+}
+
+.create_menu_sidebar ul.post_list.active{
+    display: block;
+}
+
+.create_menu_sidebar ul.post_list li{
+    display: block;
+}
+
+.create_menu_sidebar ul.post_list li a{
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.create_menu_sidebar ul.post_list li a:hover{
+    background-color: rgba(0,0,0,.03);
+}
+
+.create_menu_sidebar h3.open_links{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    margin: 0px;
+    font-size: 18px;
+    padding: 10px;
+    background-color: rgba(0,0,0,.05);
+    border-bottom: 1px solid rgba(0,0,0,.07);
+}
+
+.create_menu_sidebar h3.open_links::after{
+    content: '+';
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(0,0,0,.3);
+    top: calc(50% - 8px);
+    right: 10px;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 13px;
+}
+
+.create_menu_sidebar h3.open_links.active::after{
+    content: '-';
+    line-height: 14px;
+}
+
+.create_menu_sidebar ul.post_list p{
+    margin-top: 5px;
+}
+
+.create_menu_content .formcontroll h3{
+    margin-bottom: 0;
+}
+
+.menu_item_rpt{
+    display: flex;
+    position: relative;
+    border: 1px solid #ccc;
+    background-color: rgba(0,0,0,.03);
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.menu_item_rpt:hover{
+    background-color: rgba(0,0,0,.05);
+}
+
+.menu_item_rpt .menu_field_input{
+    width: 40%;
+    padding: 10px 5px;
+}
+
+.menu_item_rpt .delete_input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    padding: 10px 5px;
+}
+
+.menu_item_rpt .menu_field_input_order,
+.menu_item_rpt .menu_field_input_parent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5%;
+    padding: 10px 5px;
+}
+
+.menu_item_rpt .delete_input a{
+    color: #ba1919;
+}
+
+.menu_item_rpt .delete_input a:hover{
     color: #f00;
 }

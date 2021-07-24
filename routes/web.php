@@ -54,11 +54,24 @@ Route::middleware('auth')->prefix('cs-admin')->group(function(){
     // Menus
     Route::get('/menus', 'App\Http\Controllers\Admin\DashboardMenusController@index')->name('my-admin-menus');
     Route::post('/menus/create/submit', 'App\Http\Controllers\Admin\DashboardMenusController@createMenuSubmit')->name('my-admin-create-menu-submit');
+    Route::get('/menus/create', function(){
+        return redirect(route('my-admin-menus'));
+    });
     Route::get('/menus/edit/{id}', 'App\Http\Controllers\Admin\DashboardMenusController@editMenu')->name('my-admin-edit-menu');
     Route::get('/menus/edit', function(){
         return redirect(route('my-admin-menus'));
     });
     Route::post('/menus/edit/submit', 'App\Http\Controllers\Admin\DashboardMenusController@editMenuSubmit')->name('my-admin-edit-menu-submit');
+    Route::get('/menus/edit', function(){
+        return redirect(route('my-admin-menus'));
+    });
+    Route::post('/menus/remove-item/submit/{id}', 'App\Http\Controllers\Admin\DashboardMenusController@removeMenuItemSubmit')->name('my-admin-remove-menu-item-submit');
+    Route::get('/menus/remove-item', function(){
+        return redirect(route('my-admin-menus'));
+    });
+    Route::get('/menus/remove-item/submit', function(){
+        return redirect(route('my-admin-menus'));
+    });
     Route::get('/menus/delete/{id}', 'App\Http\Controllers\Admin\DashboardMenusController@deleteMenu')->name('my-admin-menu-delete');
     // Documentation
     Route::get('/documentation', 'App\Http\Controllers\Admin\DashboardDocumentationController@documentation')->name('my-admin-docs');

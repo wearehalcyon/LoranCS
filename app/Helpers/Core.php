@@ -265,11 +265,22 @@ class Core {
         return $comments;
     }
 
+    /**
+     * @param $post_id
+     * @param $meta_key
+     * @return mixed
+     * Get post meta
+     */
     public static function getPostMeta($post_id, $meta_key){
         $meta_object = PostMeta::where([
             'post_id' => $post_id,
             'meta_key' => $meta_key
         ])->first();
         return $meta_object;
+    }
+
+    public static function getCategories(){
+        $categories = Category::get();
+        return $categories;
     }
 }

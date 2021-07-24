@@ -236,36 +236,42 @@ class InstallController extends Controller{
                 'menu_id' => 1,
                 'title' => 'Home',
                 'url' => $protocol . '://' . $_SERVER['HTTP_HOST'] . '/',
+                'order' => 1,
                 'parent' => 0
             ],
             [
                 'menu_id' => 1,
                 'title' => 'Hello World!',
                 'url' => $protocol . '://' . $_SERVER['HTTP_HOST'] . '/hello-world',
+                'order' => 2,
                 'parent' => 0
             ],
             [
                 'menu_id' => 1,
                 'title' => 'Sample Page',
                 'url' => $protocol . '://' . $_SERVER['HTTP_HOST'] . '/sample-page',
+                'order' => 3,
                 'parent' => 0
             ],
             [
                 'menu_id' => 1,
                 'title' => 'Account',
                 'url' => '#',
+                'order' => 4,
                 'parent' => 0
             ],
             [
                 'menu_id' => 1,
                 'title' => 'Login',
                 'url' => $protocol . '://' . $_SERVER['HTTP_HOST'] . '/login',
+                'order' => 1,
                 'parent' => 4
             ],
             [
                 'menu_id' => 1,
                 'title' => 'Register',
                 'url' => $protocol . '://' . $_SERVER['HTTP_HOST'] . '/register',
+                'order' => 2,
                 'parent' => 4
             ],
         ];

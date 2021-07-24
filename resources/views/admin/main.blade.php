@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('head-title')</title>
         <link rel="icon" type="image/svg" href="{{ asset('public/includes/images/favicon.svg') }}">
         <link rel="preconnect" href="https://fonts.gstatic.com">

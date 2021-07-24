@@ -18,6 +18,7 @@ class CreateMenuItemsTable extends Migration
             $table->foreignId('menu_id')->constrained()->onDelete('cascade');
             $table->string('title')->nullable();
             $table->string('url');
+            $table->bigInteger('order')->nullable();
             $table->bigInteger('parent');
         });
     }
