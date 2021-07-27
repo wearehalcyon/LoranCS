@@ -1359,3 +1359,15 @@ img.updates_banner{
     object-fit: cover;
     margin-bottom: 10px;
 }
+
+.dashboard_index_columns{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+ul.posts_list_in_card{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}

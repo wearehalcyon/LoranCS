@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Helpers\Core;
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,11 +21,21 @@ class DashboardController extends Controller{
         $core = Core::class;
         $api = $core::serverAPI();
 
+        $posts = Post::where([
+            'post_type' => 'post'
+        ])->orderBy('date', 'desc')->get();
+
+        $pages = Post::where([
+            'post_type' => 'page'
+        ])->orderBy('date', 'desc')->get();
+
         return View('admin.pages.dashboard', [
             'version' => $api['version'],
             'build' => $api['build'],
             'codename' => $api['codename'],
-            'appname' => $api['appname']
+            'appname' => $api['appname'],
+            'posts' => $posts,
+            'pages' => $pages
         ]);
     }
 
