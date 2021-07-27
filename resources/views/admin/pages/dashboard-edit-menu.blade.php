@@ -38,7 +38,7 @@
                 @if(Core::getPosts('post'))
                     @foreach(Core::getPosts('page') as $post)
                         <li>
-                            <a class="choose_link_item" href="#" data-url="{{ asset($post->slug) }}" >
+                            <a class="choose_link_item" href="{{ asset($post->slug) }}" data-url="{{ asset($post->slug) }}" >
                                 {{ $post->title }}
                             </a>
                         </li>
@@ -52,7 +52,7 @@
                 @if(Core::getCategories())
                     @foreach(Core::getCategories() as $category)
                         <li>
-                            <a class="choose_link_item" href="#" data-url="{{ asset('/category/' . $category->slug) }}" >
+                            <a class="choose_link_item" href="{{ asset('/category/' . $category->slug) }}" data-url="{{ asset('/category/' . $category->slug) }}" >
                                 {{ $category->name }}
                             </a>
                         </li>

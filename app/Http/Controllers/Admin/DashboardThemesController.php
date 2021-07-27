@@ -6,6 +6,7 @@ use App\Helpers\Core;
 use App\Http\Controllers\Controller;
 use App\Models\Option;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 use ZanySoft\Zip\Zip;
@@ -31,9 +32,14 @@ class DashboardThemesController extends Controller{
         $theme_curr = Core::getOption('current_theme');
         $theme_info = file_get_contents(resource_path('views/themes/' . $theme_curr . '/themeinfo.json'));
         $theme_info = json_decode($theme_info, true);
-        //dd($theme_info);
 
-        return view('admin.pages.dashboard-themes', [
+        if (Auth::user()->role == 0 || Auth::user()->role == 1) {
+            $view = 'admin.pages.dashboard-themes';
+        } else {
+            $view = 'admin.pages.dashboard-404';
+        }
+
+        return view($view, [
             'themes_res' => $themes_res,
             //'themes_pub' => $themes_pub,
             'theme_curr' => $theme_curr,

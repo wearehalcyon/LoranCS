@@ -8,6 +8,7 @@ use App\Models\PostMeta;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 
@@ -38,7 +39,13 @@ class DashboardPostsController extends Controller
             'post_type' => 'post'
         ])->count();
 
-        return View('admin.pages.dashboard-posts', [
+        if (Auth::user()->role == 0 || Auth::user()->role == 1) {
+            $view = 'admin.pages.dashboard-posts';
+        } else {
+            $view = 'admin.pages.dashboard-404';
+        }
+
+        return View($view, [
             'posts' => $posts,
             'count' => $count
         ]);
@@ -59,9 +66,11 @@ class DashboardPostsController extends Controller
 
         Session::flash('post-session', 'Post <strong>' . $post->title . '</strong> was deleted successfully!');
 
-        $post->delete();
+        if (Auth::user()->role == 0 || Auth::user()->role == 1) {
+            $post->delete();
 
-        return redirect()->back();
+            return redirect()->back();
+        }
     }
 
     /**
@@ -121,7 +130,13 @@ class DashboardPostsController extends Controller
             ]
         ];
 
-        return view('admin.pages.dashboard-create', [
+        if (Auth::user()->role == 0 || Auth::user()->role == 1) {
+            $view = 'admin.pages.dashboard-create';
+        } else {
+            $view = 'admin.pages.dashboard-404';
+        }
+
+        return view($view, [
             'categories' => $categories,
             'images' => $images,
             'audios' => $audios,
@@ -251,7 +266,13 @@ class DashboardPostsController extends Controller
             ]
         ];
 
-        return view('admin.pages.dashboard-edit', [
+        if (Auth::user()->role == 0 || Auth::user()->role == 1) {
+            $view = 'admin.pages.dashboard-edit';
+        } else {
+            $view = 'admin.pages.dashboard-404';
+        }
+
+        return view($view, [
             'post' => $post,
             'categories' => $categories,
             'images' => $images,

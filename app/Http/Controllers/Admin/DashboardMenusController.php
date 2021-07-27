@@ -7,6 +7,7 @@ use App\Models\MenuItem;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\Menu;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class DashboardMenusController extends Controller{
@@ -23,7 +24,14 @@ class DashboardMenusController extends Controller{
      */
     public function index(){
         $menus = Menu::get();
-        return view('admin.pages.dashboard-menus', [
+
+        if (Auth::user()->role == 0 || Auth::user()->role == 1) {
+            $view = 'admin.pages.dashboard-menus';
+        } else {
+            $view = 'admin.pages.dashboard-404';
+        }
+
+        return view($view, [
             'menus' => $menus
         ]);
     }
@@ -57,7 +65,13 @@ class DashboardMenusController extends Controller{
             'menu_id' => $id
         ])->get();
 
-        return view('admin.pages.dashboard-edit-menu', [
+        if (Auth::user()->role == 0 || Auth::user()->role == 1) {
+            $view = 'admin.pages.dashboard-edit-menu';
+        } else {
+            $view = 'admin.pages.dashboard-404';
+        }
+
+        return view($view, [
             'menu' => $menu,
             'posts' => $posts,
             'menu_items' => $menu_items

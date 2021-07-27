@@ -22,24 +22,26 @@
                 <a href="<?php echo $url_dashboard; ?>"><i class="icofont-speed-meter"></i><?php echo __('Dashboard'); ?></a>
             </li>
         <?php endif; ?>
-        <li>
-            <a href="<?php echo route('my-admin-themes'); ?>">
-                <i class="icofont-ui-theme"></i>
-                <?php echo __('Themes'); ?>
-            </a>
-        </li>
-        <li>
-            <a href="<?php echo route('my-admin-posts'); ?>">
-                <i class="icofont-ui-add smallicon"></i>
-                <?php echo __('Add'); ?>
-            </a>
-            <ul class="submenu">
-                <li><a href="<?php echo route('my-admin-create-post'); ?>"><?php echo __('Post'); ?></a></li>
-                <li><a href="#"><?php echo __('Page'); ?></a></li>
-                <li><a href="#"><?php echo __('Comment'); ?></a></li>
-                <li><a href="#"><?php echo __('User'); ?></a></li>
-            </ul>
-        </li>
+        <?php if(Auth::user()->role == 0 || Auth::user()->role == 1) : ?>
+            <li>
+                <a href="<?php echo route('my-admin-themes'); ?>">
+                    <i class="icofont-ui-theme"></i>
+                    <?php echo __('Themes'); ?>
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo route('my-admin-posts'); ?>">
+                    <i class="icofont-ui-add smallicon"></i>
+                    <?php echo __('Add'); ?>
+                </a>
+                <ul class="submenu">
+                    <li><a href="<?php echo route('my-admin-create-post'); ?>"><?php echo __('Post'); ?></a></li>
+                    <li><a href="#"><?php echo __('Page'); ?></a></li>
+                    <li><a href="#"><?php echo __('Comment'); ?></a></li>
+                    <li><a href="#"><?php echo __('User'); ?></a></li>
+                </ul>
+            </li>
+        <?php endif; ?>
     </ul>
     <ul class="right-nav">
         <li class="user-link">

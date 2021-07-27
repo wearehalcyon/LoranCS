@@ -1273,3 +1273,16 @@ a.delete_menu:hover{
 .menu_item_rpt .delete_input a:hover{
     color: #f00;
 }
+
+.restriction_alert{
+    display: block;
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.restriction_alert .notification{
+    display: inline-block;
+    width: 900px;
+    max-width: 100%;
+}

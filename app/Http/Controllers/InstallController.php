@@ -120,6 +120,7 @@ class InstallController extends Controller{
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('password'));
+        $user->role = 0;
         $user->created_at = date('Y-m-d H:i:s');
         $user->save();
 

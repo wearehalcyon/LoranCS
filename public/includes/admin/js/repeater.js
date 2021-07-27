@@ -31,7 +31,7 @@ jQuery.fn.extend({
                         $(el).attr("name", attrName);
                     }
                 }
-                if (fresh == true) {
+                if (fresh = true) {
                     //$(el).attr('value', '');
                 }
 
