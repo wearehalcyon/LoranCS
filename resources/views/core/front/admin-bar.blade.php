@@ -42,6 +42,9 @@
                 </ul>
             </li>
         <?php endif; ?>
+        <?php if (Core::serverAPI()['version'] > Core::App()['ver']) : ?>
+            <li class="updates_available"><a href="<?php echo route('my-admin-core-update'); ?>"><i class="icofont-download-alt"></i><?php echo __('Updates'); ?></a></li>
+        <?php endif; ?>
     </ul>
     <ul class="right-nav">
         <li class="user-link">

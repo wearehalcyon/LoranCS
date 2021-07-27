@@ -15,11 +15,26 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 
 class Core {
+    /**
+     * @return mixed
+     * LoranCS Server API
+     */
+    public static function serverAPI(){
+        $server = 'aHR0cDovLzIwMjc5MDMuaWRlbmdpbmUud2ViLmhvc3RpbmctdGVzdC5uZXQvYXBwcy9sb3JhbmNzL3VwZ3JhZGUuanNvbg==';
+        $json = file_get_contents(base64_decode($server));
+        return json_decode($json, true);
+    }
+
+    /**
+     * @return string[]
+     * Main app array
+     */
     public static function App(){
         return [
             'appname' => 'LoranCS',
             'appurl' => '<a href="https://lorancs.org/" target="_blank">LoranCS</a>',
             'ver' => '1.0.3',
+            'kernel' => '1.0.9',
             'build' => '072321',
             'release' => 'alpha',
             'codename' => 'Neptune',

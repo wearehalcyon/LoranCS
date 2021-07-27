@@ -32,6 +32,10 @@ Route::prefix('install-engine')->group(function(){
 // Admin routes
 Route::middleware('auth')->prefix('cs-admin')->group(function(){
     Route::get('/', 'App\Http\Controllers\Admin\DashboardController@index')->name('my-admin');
+    Route::get('/core/update', 'App\Http\Controllers\Admin\DashboardController@coreUpdate')->name('my-admin-core-update');
+    Route::get('/core', function(){
+        return redirect()->route('my-admin');
+    });
     // Posts
     Route::get('/posts', 'App\Http\Controllers\Admin\DashboardPostsController@index')->name('my-admin-posts');
     Route::get('/posts/edit', function(){

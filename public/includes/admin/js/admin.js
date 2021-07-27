@@ -18,4 +18,15 @@ jQuery(document).ready(function($){
     window.setTimeout(function(){
         $('.autohide_message').fadeOut(300);
     }, 3000);
+    // Show description
+    $('a.show_update_description').on('click', function(e){
+        e.preventDefault();
+        $(this).toggleClass('showed');
+        if ($(this).hasClass('showed')) {
+            $(this).text('Close Details');
+        } else {
+            $(this).text('View Details');
+        }
+        $('.details_text').toggleClass('show');
+    });
 });
