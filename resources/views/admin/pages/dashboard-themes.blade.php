@@ -75,7 +75,7 @@
                                 <button class="close_preview_theme"><i class="icofont-close-line"></i></button>
                             </div>
                             <div class="prev_frame_window">
-                                <iframe src="{{ Core::getOption('siteurl') }}" frameborder="0"></iframe>
+                                <iframe src="{{ Core::getOption('siteurl') . '/?preview=theme' }}" frameborder="0"></iframe>
                             </div>
                         </div>
                     </div>

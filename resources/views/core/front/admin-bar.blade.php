@@ -5,6 +5,8 @@
     $url_home = route('home');
     $route_dashboard = Request::segment(1);
     $sitename = Core::getOption('sitename');
+
+    if (isset($_GET['preview']) != 'theme') :
 ?>
 <div id="admin-bar" class="admin-bar user-id-<?php echo $user->id; ?>" data-show="true">
     <ul class="left-nav">
@@ -63,3 +65,4 @@
         </li>
     </ul>
 </div>
+<?php endif; ?>
