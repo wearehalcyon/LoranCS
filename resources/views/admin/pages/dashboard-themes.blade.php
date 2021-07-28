@@ -66,6 +66,19 @@
                 <p>{{ $description }}</p>
                 <div class="curr_theme_actions">
                     <a href="{!! $theme_url !!}" target="_blank" class="button">{{ __('Go to theme page') }}</a>
+                    <a href="#preview-theme" class="open_tneme_preview button">{{ __('Preview Theme') }}</a>
+                    <div id="preview-theme" class="preview_theme_frame">
+                        <div class="close"></div>
+                        <div class="theme_preview_screen">
+                            <div class="prev_top">
+                                <h4>{{ __('Theme Preview') }}</h4>
+                                <button class="close_preview_theme"><i class="icofont-close-line"></i></button>
+                            </div>
+                            <div class="prev_frame_window">
+                                <iframe src="{{ Core::getOption('siteurl') }}" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -155,6 +168,15 @@
                 if (thisElem.length != '') count++;
             }
             $('.dash_themes_list h3 span').text(': ' + (count + 1));
+        });
+        // Open theme preview
+        $('a.open_tneme_preview').on('click', function(e){
+            e.preventDefault();
+            var target = $(this).attr('href');
+            $(target).addClass('show');
+        });
+        $('.preview_theme_frame .close, .prev_top button.close_preview_theme').on('click', function(){
+            $('.preview_theme_frame').removeClass('show');
         });
     </script>
 @endsection
