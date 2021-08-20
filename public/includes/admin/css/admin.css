@@ -81,7 +81,8 @@ a:hover{
     margin-right: 5px;
 }
 
-.sidebar_menu li:hover a{
+.sidebar_menu li:hover a,
+.sidebar_menu li.active a{
     background-color: rgba(255,255,255,.05);
     color: #a7c4ff;
     border-left: 3px solid #a7c4ff;

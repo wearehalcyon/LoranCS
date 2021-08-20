@@ -175,7 +175,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\CoreServiceProvider::class,
+        App\Providers\DarwinServiceProvider::class,
     ],
 
     /*
@@ -228,7 +228,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Core' => App\Helpers\Core::class
+        'Core' => App\Darwin\Core::class
     ],
 
 ];

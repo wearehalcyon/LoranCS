@@ -1,5 +1,5 @@
 <?php
-namespace App\Helpers;
+namespace App\Darwin;
 
 use App\Models\Category;
 use App\Models\Comment;
@@ -115,23 +115,23 @@ class Core {
                 'parent' => 0
             ])->get();
             echo '<ul class="menu-' . $location . '">';
-                foreach( $menu_items as $menu_item ) {
-                    echo '<li class="menu-item menu-item-id-' . $menu_item->id . '">';
-                        echo '<a href="' . $menu_item->url . '">' . $menu_item->title . '</a>';
-                        $submenus = MenuItem::where([
-                            'parent' => $menu_item->id
-                        ])->get();
-                        if (!$submenus->isEmpty()) {
-                            echo '<ul class="sub-menu">';
-                                foreach( $submenus as $submenu ) {
-                                    echo '<li class="menu-item menu-item-id-' . $submenu->id . '">';
-                                        echo '<a href="' . $submenu->url . '">' . $submenu->title . '</a>';
-                                    echo '</li>';
-                                }
-                            echo '</ul>';
-                        }
-                    echo '</li>';
+            foreach( $menu_items as $menu_item ) {
+                echo '<li class="menu-item menu-item-id-' . $menu_item->id . '">';
+                echo '<a href="' . $menu_item->url . '">' . $menu_item->title . '</a>';
+                $submenus = MenuItem::where([
+                    'parent' => $menu_item->id
+                ])->get();
+                if (!$submenus->isEmpty()) {
+                    echo '<ul class="sub-menu">';
+                    foreach( $submenus as $submenu ) {
+                        echo '<li class="menu-item menu-item-id-' . $submenu->id . '">';
+                        echo '<a href="' . $submenu->url . '">' . $submenu->title . '</a>';
+                        echo '</li>';
+                    }
+                    echo '</ul>';
                 }
+                echo '</li>';
+            }
             echo '</ul>';
         }
     }
