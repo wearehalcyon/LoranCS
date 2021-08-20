@@ -35,7 +35,7 @@ class Core {
             'appurl' => '<a href="https://lorancs.org/" target="_blank">LoranCS</a>',
             'ver' => '1.0.3',
             'kernel' => '1.0.9',
-            'build' => '072321',
+            'build' => '082121',
             'release' => 'alpha',
             'codename' => 'Neptune',
         ];
