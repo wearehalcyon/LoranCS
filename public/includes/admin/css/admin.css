@@ -1453,3 +1453,42 @@ ul.posts_list_in_card{
     width: 100%;
     height: 100%;
 }
+
+.gsetting{
+    width: 600px;
+    max-width: 100%;
+}
+
+.gsettingcontrol{
+    margin-top: 30px;
+}
+
+.gsettingcontrol h5{
+    margin-bottom: 5px;
+}
+
+.gsettingcontrol h6{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.gsettingcontrol span{
+    display: block;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.robots_preview{
+    display: block;
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+    color: #000;
+    width: 600px;
+    height: 150px;
+    margin-top: 10px;
+    background-color: #fff;
+    overflow-y: auto;
+    border-radius: 4px;
+}

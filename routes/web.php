@@ -87,6 +87,12 @@ Route::middleware('auth')->prefix('cs-admin')->group(function(){
         Route::get('/delete/{id}', 'App\Http\Controllers\Admin\DashboardMenusController@deleteMenu')->name('my-admin-menu-delete');
     });
 
+    // Site Options
+    Route::prefix('/general-settings')->group(function(){
+        Route::get('/', 'App\Http\Controllers\Admin\DashboardSettingsController@index')->name('my-admin-settings');
+        Route::get('/update', 'App\Http\Controllers\Admin\DashboardSettingsController@update')->name('my-admin-gsettings-update');
+    });
+
     // Documentation
     Route::prefix('/documentation')->group(function(){
         Route::get('/', 'App\Http\Controllers\Admin\DashboardDocumentationController@documentation')->name('my-admin-docs');

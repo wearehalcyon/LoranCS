@@ -46,8 +46,8 @@
 <ul class="sidebar_menu">
     <li class="menu_title">{{ __('Engine') }}</li>
     @if(Auth::user()->role == 0 || Auth::user()->role == 1)
-        <li class="dashboard-menu-item @if(Route::getCurrentRoute()->getPrefix() == 'cs-admin/settings'){{ 'active' }}@endif">
-            <a href="{{ route('my-admin') }}"><i class="icofont-ui-settings"></i>{{ __('Settings') }}</a>
+        <li class="dashboard-menu-item @if(Route::getCurrentRoute()->getPrefix() == 'cs-admin/general-settings'){{ 'active' }}@endif">
+            <a href="{{ route('my-admin-settings') }}"><i class="icofont-ui-settings"></i>{{ __('Settings') }}</a>
         </li>
     @endif
     <li class="dashboard-menu-item @if(Route::getCurrentRoute()->getPrefix() == 'cs-admin/documentation'){{ 'active' }}@endif">
